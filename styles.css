@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Базовые настройки страницы
+   ========================================================================== */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* ==========================================================================
+   1. Секция Hero (Главный экран - теперь без параллакса)
+   ========================================================================== */
+.hero {
+    position: relative;
+    height: 100vh;        /* Высота ровно на весь экран */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #008000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   2. Секция Преимущества (Окно для эффекта параллакса)
+   ========================================================================== */
+.features {
+    position: relative;
+    width: 100%;
+    overflow: hidden;     /* Обрезаем края картинки при смещении */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 250px 20px;  /* Увеличенный отступ для долгого скролла */
+}
+
+/* Текстовый контейнер поверх изображения */
+.features-content {
+    position: relative;
+    z-index: 10;          /* Поднимает текст НАД картинкой */
+    text-align: center;
+    color: #fff;          /* Белый цвет текста для читаемости на фото */
+    max-width: 800px;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.features p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Фоновое параллакс-изображение */
+.features img.centered-image {
+    position: absolute;
+    top: -150px;          /* Приподнимаем вверх, давая запас для движения вниз */
+    left: 0;
+    width: 100%;
+    height: 160vh;        /* Увеличиваем высоту, чтобы перекрыть весь скролл */
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* ==========================================================================
+   3. Секция Отзывы (Social Proof)
+   ========================================================================== */
+.social-proof {
+    background-color: #000;
+    color: #fff;
+    padding: 250px 20px;  /* Увеличенный отступ */
+    text-align: center;
+}
+
+.social-proof h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.social-proof p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   4. Секция Контакты (Contact)
+   ========================================================================== */
+.contact {
+    background-color: #000;
+    color: #fff;
+    padding: 250px 20px;  /* Увеличенный отступ */
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 320px;     /* Ограничение ширины формы */
+}
+
+.contact input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Чтобы padding не раздувал ширину инпута */
+}
+
+.contact button {
+    width: 100%;
+    background-color: #008000;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telegram Bot for Small Business</title>
     <link rel="icon" href="data:,">
-    <!-- Прямой путь к стилям без url_for -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Точный путь к стилям для GitHub Pages -->
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -18,16 +18,17 @@
         </div>
     </div>
 
-<!-- ... (остальной код) -->
     <div class="features">
+        <!-- ТЕКСТ ВОЗВРАЩЕН НА МЕСТО -->
         <div class="features-content">
-            <!-- Текст преимуществ -->
+            <h2>Наши преимущества</h2>
+            <p><strong>Уникальность:</strong> Индивидуальный подход к каждому клиенту</p>
+            <p><strong>Масштабирование:</strong> Вы получите не только продукт высокого качества, мы поделимся с Вами нашим опытом</p>
+            <p><strong>Автоматизация:</strong> Сложность только начать, как попробуете вас уже будет не остановить</p>
         </div>
-        <!-- ВАЖНО: Добавлен класс centered-image -->
-        <img src="images/efP.jpg" class="centered-image" alt="Features Background">
+        <!-- Картинка с нужным классом -->
+        <img src="./images/efP.jpg" class="centered-image" loading="eager" alt="Features Background">
     </div>
-<!-- ... (остальной код) -->
-
 
     <div class="social-proof">
         <h2>Отзывы наших клиентов</h2>
@@ -36,7 +37,6 @@
 
     <div class="contact">
         <h2>Оставьте свои контактные данные</h2>
-        <!-- На GitHub Pages нельзя отправить POST на Flask, поэтому временно ставим # -->
         <form action="#" method="POST">
             <input type="text" placeholder="Имя" required>
             <input type="text" placeholder="Email/Телефон" required>
@@ -44,7 +44,7 @@
         </form>
     </div>
 
-    <!-- Прямой путь к скрипту без url_for -->
-    <script src="script.js"></script>
+    <!-- ИСПРАВЛЕННЫЙ ПУТЬ К СКРИПТУ (с точкой в начале) -->
+    <script src="./script.js"></script>
 </body>
 </html>

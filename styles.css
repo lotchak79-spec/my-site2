@@ -12,10 +12,9 @@ body, html {
 }
 
 /* ==========================================================================
-   1. Секция Hero (Главный экран - черный фон)
+   1. Секция Hero (Главный экран)
    ========================================================================== */
 .hero {
-    position: relative;
     height: 100vh;        /* Высота ровно на весь экран */
     width: 100%;
     display: flex;
@@ -51,25 +50,28 @@ body, html {
 }
 
 /* ==========================================================================
-   2. Секция Преимущества (Окно для эффекта параллакса)
+   2. Секция Преимущества (Чистый CSS-параллакс)
    ========================================================================== */
 .features {
-    position: relative;
     width: 100%;
-    overflow: hidden;     /* Скрывает выходящие за рамки части картинки при сдвиге */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 250px 20px;  /* Увеличенный отступ, чтобы сайт стал длинным */
+    box-sizing: border-box;
+    padding: 300px 20px;  /* Делаем блок огромным для долгого скролла */
+    text-align: center;
+    
+    /* Магия параллакса: подключаем картинку как фон */
+    background-image: url('images/efP.jpg'); 
+    background-attachment: fixed; /* Картинка застывает при скролле */
+    background-position: center;   /* Центрируем её */
+    background-repeat: no-repeat;  /* Не дублируем */
+    background-size: cover;        /* Растягиваем без искажений */
 }
 
-/* Текстовый контейнер, который ложится поверх изображения */
+/* Контейнер для текста преимуществ */
 .features-content {
-    position: relative;
-    z-index: 10;          /* Поднимает ваш текст НАД картинкой */
-    text-align: center;
-    color: #fff;          /* Белый цвет текста для идеальной читаемости на фото */
     max-width: 800px;
+    margin: 0 auto;
+    color: #fff;          /* Белый текст, чтобы читался на картинке */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Тень для идеальной читаемости */
 }
 
 .features h2 {
@@ -83,26 +85,13 @@ body, html {
     line-height: 1.6;
 }
 
-/* Ваша фоновая параллакс-картинка */
-.features img.centered-image {
-    position: absolute;
-    top: -150px;          /* Стартовое смещение вверх, дающее пространство для маневра */
-    left: 0;
-    width: 100%;
-    height: 160vh;        /* Картинка выше экрана, чтобы снизу не вылезал черный фон при скролле */
-    object-fit: cover;    /* Растягивает фото на весь экран без искажения пропорций */
-    z-index: 1;           /* Опускает картинку под слой с текстом */
-    pointer-events: none; /* Пропускает клики и выделения сквозь картинку */
-    will-change: transform; /* Подсказка браузеру для плавной аппаратной анимации */
-}
-
 /* ==========================================================================
    3. Секция Отзывы (Social Proof)
    ========================================================================== */
 .social-proof {
     background-color: #000;
     color: #fff;
-    padding: 250px 20px;  /* Увеличенный отступ для долгого скролла */
+    padding: 250px 20px;  
     text-align: center;
 }
 
@@ -122,7 +111,7 @@ body, html {
 .contact {
     background-color: #000;
     color: #fff;
-    padding: 250px 20px;  /* Увеличенный отступ */
+    padding: 250px 20px;  
     text-align: center;
 }
 
@@ -135,7 +124,7 @@ body, html {
     display: inline-block;
     text-align: left;
     width: 100%;
-    max-width: 320px;     /* Ограничение ширины полей */
+    max-width: 320px;     
 }
 
 .contact input {
@@ -144,7 +133,7 @@ body, html {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Гарантирует правильный расчет ширины с учетом внутренних отступов */
+    box-sizing: border-box; 
 }
 
 .contact button {
